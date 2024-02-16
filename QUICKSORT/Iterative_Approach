@@ -1,0 +1,79 @@
+#include<iostream>
+#include<chrono>
+#include<cstdlib>
+#include<algorithm>
+using namespace std;
+using namespace std::chrono;
+
+void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high]; 
+    int i = (low - 1); 
+
+    for (int j = low; j <= high - 1; j++) {
+        if (arr[j] <= pivot) {
+            i++; 
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
+
+void iterativeQuickSort(int arr[], int l, int h) {
+    int stack[h - l + 1];
+    int top = -1;
+
+    stack[++top] = l;
+    stack[++top] = h;
+
+    while (top >= 0) {
+        h = stack[top--];
+        l = stack[top--];
+
+        int p = partition(arr, l, h);
+
+        if (p - 1 > l) {
+            stack[++top] = l;
+            stack[++top] = p - 1;
+        }
+
+        if (p + 1 < h) {
+            stack[++top] = p + 1;
+            stack[++top] = h;
+        }
+    }
+}
+int* generate_numbers(int g) {
+    int *arr = new int[g];
+    for (int j = 0; j < g; j++) {
+        arr[j] = rand();
+    }
+    return arr;
+}
+int main() {
+    for (int i = 1000; i <= 5000; i += 200) {
+        int *arr = generate_numbers(i);
+
+        auto start = high_resolution_clock::now();
+
+        for (int m = 1; m <= 10; m++) {
+            iterativeQuickSort(arr, 0, i - 1);
+        }
+
+        auto stop = high_resolution_clock::now();
+
+        auto duration = duration_cast<nanoseconds>(stop - start) / 10;
+
+        cout << i << "\t" << duration.count() << endl;
+
+        delete[] arr;  
+    }
+
+    return 0;
+}

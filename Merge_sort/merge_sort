@@ -1,0 +1,81 @@
+#include<iostream>
+#include<chrono>
+#include<cstdlib>
+using namespace std;
+using namespace std::chrono;
+
+void merge(int a[],int start,int mid,int end)
+{
+    int n1 = mid-start+1;
+    int n2 = end - mid;
+    int i=0;
+    int j=0;
+    int k= start;
+    int a1[n1];
+    int a2[n2];
+     for (int i = 0; i < n1; i++)
+        a1[i] = a[start + i];
+    for (int j = 0; j < n2; j++)
+        a2[j] = a[mid + 1 + j];
+
+    while(i<=n1 && j<=n2)
+    {
+        if(a1[i]<a2[j])
+        {
+            a[k]=a1[i];
+            i++;
+            k++;
+        }
+        else
+        {
+            a[k]=a2[j];
+            j++;
+            k++;
+        }
+        while(i<n1)
+        {
+            a[k]=a1[i];
+            i++;
+            k++;
+        }        
+    }
+}
+void MergeSort(int a[],int start,int end)
+{
+    int mid=(end+start)/2;
+    if(start<end)
+    {
+    MergeSort(a,start,mid);
+    MergeSort(a,mid+1,end);
+    merge(a,start,mid,end);
+    }
+}
+int* generate_numbers(int g) {
+    int *arr = new int[g];
+    for (int j = 0; j < g; j++) {
+        arr[j] = rand();
+    }
+    return arr;
+}
+
+int main() {
+    for (int i = 1000; i <= 5000; i += 200) {
+        int *arr = generate_numbers(i);
+
+        auto start = high_resolution_clock::now();
+
+        for (int m = 1; m <= 10; m++) {
+            MergeSort(arr, 0, i - 1);
+        }
+
+        auto stop = high_resolution_clock::now();
+
+        auto duration = duration_cast<nanoseconds>(stop - start) / 10;
+
+        cout << i << "\t" << duration.count() << endl;
+
+        delete[] arr;  
+    }
+
+    return 0;
+}

@@ -1,0 +1,41 @@
+#include<iostream>
+#include<chrono>
+#include<cstdlib>
+using namespace std;
+using namespace std::chrono;
+
+int* gen_numbers(int n)
+{
+    int* arr = new int[n];
+    for(int i=0; i<n ;i++)
+    {
+        arr[i] = rand();
+    }
+    return arr;
+}
+
+void sum_of_numbers(int arr[],int num)
+{
+    int sum = 0;
+    for(int i=0;i<num;i++)
+    {
+        sum += arr[i];
+    }
+}
+int main()
+{
+    for(int i=100000 ; i<= 400000; i+= 10000)
+    {
+        int* arr = gen_numbers(i);
+        auto start = high_resolution_clock::now();
+        for(int m=1;m<=10;m++)
+        {
+            sum_of_numbers(arr,i);
+        }
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<nanoseconds>(stop - start)/10;
+        cout<<duration.count()<<endl;
+        delete[] arr;
+    }
+    return 0;
+}

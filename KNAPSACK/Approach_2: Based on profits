@@ -10,27 +10,31 @@ struct Item {
     int weight;
 };
 
-// Function to compare items based on profit in non-increasing order
-bool compareItems(const Item& a, const Item& b) {
-    return a.profit > b.profit;
-}
-
-// APPROACH 2: according to profits in non-increasing order
 void KNAPSACK(int n, int max_weight, Item items[]) {
-    sort(items, items + n, compareItems);
+    int given_weight = max_weight;
+    int x[n];
+    int i;
 
-    int i, j;
-    int K[n + 1][max_weight + 1];
+    for (i = 0; i < n; i++) {
+        x[i] = 0;
+    }
 
-    for (i = 0; i <= n; i++) {
-        for (j = 0; j <= max_weight; j++) {
-            if (i == 0 || j == 0)
-                K[i][j] = 0;
-            else if (items[i - 1].weight <= j)
-                K[i][j] = max(items[i - 1].profit + K[i - 1][j - items[i - 1].weight], K[i - 1][j]);
-            else
-                K[i][j] = K[i - 1][j];
+    // Sort the items based on profits in non-increasing order
+    sort(items, items + n, [](const Item& a, const Item& b) {
+        return a.profit > b.profit;
+    });
+
+    for (i = 0; i < n; i++) {
+        if (items[i].weight <= given_weight) {
+            x[i] = 1;
+            given_weight = given_weight - items[i].weight;
+        } else {
+            break;
         }
+    }
+
+    if (i < n) {
+        x[i] = static_cast<double>(given_weight) / items[i].weight;
     }
 }
 
@@ -38,7 +42,7 @@ Item* generate_items(int n) {
     Item* items = new Item[n];
     for (int j = 0; j < n; j++) {
         items[j].profit = rand();
-        items[j].weight = rand();   
+        items[j].weight = rand();
     }
     return items;
 }

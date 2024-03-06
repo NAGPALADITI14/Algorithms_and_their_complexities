@@ -1,0 +1,41 @@
+#include<iostream>
+#include<chrono>
+#include<cstdlib>
+using namespace std;
+using namespace std::chrono;
+
+void coins_combination(int arr[], int k, int n)
+{
+    if(k == n + 1)
+    {
+        return;
+    }
+
+    arr[k] = 1;
+    coins_combination(arr, k + 1, n);
+
+    arr[k] = 0;
+    coins_combination(arr, k + 1, n);
+}
+
+int main()
+{
+    for (int i = 10; i <= 25; i += 3)
+    {
+        int *arr = new int[i]; 
+
+        auto start = high_resolution_clock::now(); 
+
+        for (int m = 1; m <= 10; m++)
+        {
+            coins_combination(arr, 0, i); 
+        }
+
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<nanoseconds>(stop - start) / 10;
+        cout<<i<<endl;
+        delete[] arr;
+    }
+
+    return 0;
+}

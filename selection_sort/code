@@ -1,0 +1,52 @@
+#include <iostream>
+#include <chrono>
+#include <cstdlib>
+using namespace std;
+using namespace std::chrono;
+
+void selection_sort(int arr[], int n)
+{
+    int i, j, k, temp;
+    for (i = 0; i < n; i++)
+    {
+        j = i;
+        for (k = i + 1; k < n; k++)
+        {
+            if (arr[k] < arr[j])
+            {
+                j = k;
+            }
+        }
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+
+int *gen_numbers(int n)
+{
+    int *arr = new int[n];
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = rand();
+    }
+    return arr;
+}
+
+int main()
+{
+    for (int i = 1000; i <= 4000; i += 100)
+    {
+        int *arr = gen_numbers(i);
+        auto start = high_resolution_clock::now();
+        for (int m = 1; m <= 10; m++)
+        {
+            selection_sort(arr, i);
+        }
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<nanoseconds>(stop - start) / 10;
+        cout << i << "\t"<<duration.count() << endl;
+        delete[] arr;
+    }
+    return 0;
+}

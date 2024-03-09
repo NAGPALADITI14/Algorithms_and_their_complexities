@@ -16,23 +16,16 @@ A graph illustrating the time complexity, particularly the relationship between 
 <img width="475" alt="selection_sort" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/a9478330-7d48-4d16-900c-1d2970b4dbce">
 
 Use Cases:
-1) Educational Purposes:
+1) Educational Purposes:  Selection Sort's simplicity makes it an effective tool for teaching basic sorting concepts in educational settings.
 
-Selection Sort's simplicity makes it an effective tool for teaching basic sorting concepts in educational settings.
-2) Small Datasets:
+2) Small Datasets:  Suitable for sorting small datasets where the simplicity of the algorithm outweighs its inefficiency.
 
-Suitable for sorting small datasets where the simplicity of the algorithm outweighs its inefficiency.
-3) Simplicity Over Efficiency:
+3) Simplicity Over Efficiency:  When a straightforward and easy-to-understand sorting algorithm is prioritized over sorting efficiency.
 
-When a straightforward and easy-to-understand sorting algorithm is prioritized over sorting efficiency.
-4) Stable In-Place Sorting:
+4) Stable In-Place Sorting:  When stable in-place sorting is required, as Selection Sort preserves the relative order of equal elements.
 
-When stable in-place sorting is required, as Selection Sort preserves the relative order of equal elements.
-5) Teaching Sorting Concepts:
+5) Teaching Sorting Concepts:  Ideal for illustrating fundamental sorting concepts, serving as a foundation before introducing more complex algorithms.
 
-Ideal for illustrating fundamental sorting concepts, serving as a foundation before introducing more complex algorithms.
-6) Understanding Sorting Algorithms:
-
-Useful for individuals new to sorting algorithms to gain a basic understanding of sorting mechanics.
+6) Understanding Sorting Algorithms:  Useful for individuals new to sorting algorithms to gain a basic understanding of sorting mechanics.
 
 This README serves as a comprehensive guide, providing users with insights into the iterative Selection Sort algorithm's implementation, characteristics, and use cases. It equips users with the necessary information to apply and analyze Selection Sort in different scenarios.

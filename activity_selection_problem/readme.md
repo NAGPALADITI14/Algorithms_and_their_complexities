@@ -11,6 +11,7 @@ The provided C++ implementation offers a solution to the Activity Selection Prob
 Data Structures:
 
 Input Format:   The input consists of a set of activities, each represented by a start time and finish time.
+
 Output Format:  The output is the maximum set of non-overlapping activities that can be performed.
 
 
@@ -29,6 +30,6 @@ Use Cases:
 
 2) Resource Allocation:  Applicable in scenarios where resources need to be allocated to activities with defined time constraints, optimizing resource usage.
 
-3)Project Management:  Valuable for scheduling tasks in project management, maximizing the number of tasks completed within a given timeframe.
+3) Project Management:  Valuable for scheduling tasks in project management, maximizing the number of tasks completed within a given timeframe.
 
 This README serves as a guide for understanding and utilizing the Activity Selection Problem algorithm. It provides users with information on the implementation, input/output formats, time complexity, graph representation, and use cases to facilitate effective usage of the algorithm in various scenarios.

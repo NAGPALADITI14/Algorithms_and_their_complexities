@@ -4,10 +4,10 @@ Description:
 
 This README introduces two distinct implementations of the Quicksort algorithm in C++: a recursive approach and an iterative approach. Quicksort, a highly efficient sorting algorithm, is explored through both strategies, allowing users to understand, compare, and leverage these implementations based on their specific needs and preferences.
 
-Recursive Approach
+Recursive Approach:
 The recursive Quicksort implementation follows the classic divide-and-conquer paradigm. It efficiently sorts an integer array by recursively partitioning the array into smaller segments, sorting each segment, and then combining them to achieve a fully sorted array. The README provides guidance on how to compile, run, and analyze the recursive Quicksort, enabling users to experiment with different array sizes.
 
-Iterative Approach
+Iterative Approach:
 The iterative Quicksort version employs a non-recursive strategy, utilizing a stack to manage the partitioning and sorting process iteratively. While maintaining an average time complexity of O(n log n), this approach addresses potential stack overflow issues associated with recursion. Comprehensive instructions are provided for compiling, running, and assessing the performance of this iterative Quicksort implementation.
 
 

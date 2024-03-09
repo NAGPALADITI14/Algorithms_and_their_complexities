@@ -27,7 +27,9 @@ Use Cases:
 This section outlines scenarios where Merge Sort is particularly useful:
 
   1)Sorting Large Datasets: Merge Sort's efficiency with large datasets makes it suitable for scenarios where extensive          sorting is required.
+  
   2)External Sorting in Databases: Merge Sort is commonly used in database management systems for external sorting due to        its ability to handle large amounts of data.
+  
   3)Parallel Processing: The divide-and-conquer nature of Merge Sort allows for parallel processing, making it applicable in     parallel computing environments.
 
 Instructions:

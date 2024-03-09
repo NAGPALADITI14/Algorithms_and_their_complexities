@@ -19,6 +19,9 @@ Time Complexity Graph:
 
 A graphical representation of the time complexity is provided. The graph depicts the relationship between the input size (array size) and the corresponding time taken for the algorithm to execute. The graph visually shows the logarithmic nature of the time complexity.
 
+<img width="513" alt="merge_sort" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/793ed1fd-9594-4688-a78b-f2081f554ae7">
+
+
 Use Cases:
 
 This section outlines scenarios where Merge Sort is particularly useful:

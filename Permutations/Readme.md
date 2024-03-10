@@ -27,13 +27,20 @@ The time complexity of the permutations generator is O(n!), where n is the numbe
 Space Complexity
 The space complexity of the permutations generator is O(n), representing the space required for recursion.
 
-Usage
+Usage:
+
 The Permutations Generator is useful in various applications, including:
 
-Cryptography for generating keys.
-Combinatorial problems where all possible arrangements are needed.
-Test case generation for software testing.
+1) Cryptography for generating keys.
+
+2) Combinatorial problems where all possible arrangements are needed.
+
+3) Test case generation for software testing.
+
 Implementation Tips
-Ensure that the input set does not contain duplicate elements if unique permutations are desired.
-Customize the generator to meet specific requirements, such as limiting the depth of permutations or filtering certain combinations.
-Be cautious with large input sets, as the number of permutations grows factorially.
+
+1) Ensure that the input set does not contain duplicate elements if unique permutations are desired.
+   
+2) Customize the generator to meet specific requirements, such as limiting the depth of permutations or filtering certain combinations.
+
+3) Be cautious with large input sets, as the number of permutations grows factorially.

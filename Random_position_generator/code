@@ -4,6 +4,9 @@
 using namespace std;
 using namespace std::chrono;
 
+// Declare the swap function
+void swap(int *a, int *b);
+
 int *generate_number(int g)
 {
     int *arr = new int[g];
@@ -13,6 +16,7 @@ int *generate_number(int g)
     }
     return arr;
 }
+
 int random_sort(int arr[], int low, int high)
 {
     int pivot = arr[low];
@@ -36,12 +40,15 @@ int random_sort(int arr[], int low, int high)
     swap(&arr[low], &arr[j]);
     return j;
 }
+
+// Implement the swap function
 void swap(int *a, int *b)
 {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
+
 int main()
 {
     for (int i = 100000; i <= 500000; i += 20000)
@@ -58,7 +65,7 @@ int main()
         auto stop = high_resolution_clock::now();
 
         auto duration = duration_cast<nanoseconds>(stop - start) / 10;
-        cout << i << endl ;
+           cout <<"(" <<i <<","<< "\t" << duration.count()<<")," << endl;
         delete[] arr;
     }
 

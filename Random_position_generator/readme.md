@@ -19,6 +19,7 @@ The algorithm for generating random positions involves utilizing a random number
 
 Time Complexity  :
 The time complexity of the Random Position Generator is constant, O(1), as generating a random position involves a fixed number of operations.
+
 <img width="486" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/333903c0-2cf5-4478-a2df-c9530ec977f1">
 
 Usage  :

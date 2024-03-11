@@ -1,0 +1,96 @@
+#include<iostream>
+#include<chrono>
+#include<cstdlib>
+using namespace std;
+using namespace std::chrono;
+
+
+const int MAX_EDGES = 6; 
+const int infinity = 100000000; 
+
+struct Graph
+{
+    int start;
+    int dest;
+    int cost;
+};
+
+void initialize(Graph& g, int start_index, int dest_index, int cost)
+{
+    g.start = start_index;
+    g.dest = dest_index;
+    g.cost = cost;
+    if (g.start == g.dest)
+    {
+        g.cost = 0;
+    }
+}
+
+bool addEdge(Graph graph[], int start_index, int dest_index, int cost, int& currentSize)
+{
+    if (currentSize < MAX_EDGES)
+    {
+        initialize(graph[currentSize], start_index, dest_index, cost);
+        currentSize++;
+        return true;
+    }
+    else
+    {
+        cout << "Graph is full. Cannot add more edges." << endl;
+        return false;
+    }
+}
+
+void SSSP(Graph graph[], int size, int source, int dist[], int parent[])
+{
+    bool visited[MAX_EDGES] = {false};
+
+    for (int i = 0; i < size; ++i)
+    {
+        dist[i] = infinity;
+        parent[i] = -1;
+    }
+
+    dist[source] = 0;
+
+    for (int count = 0; count < size - 1; ++count)
+    {
+        int minDist = infinity;
+        int minIndex = -1;
+
+        for (int i = 0; i < size; ++i)
+        {
+            if (!visited[i] && dist[i] < minDist)
+            {
+                minDist = dist[i];
+                minIndex = i;
+            }
+        }
+
+        visited[minIndex] = true;
+
+        for (int i = 0; i < size; ++i)
+        {
+            if (!visited[i] && graph[i].start == minIndex && dist[minIndex] != infinity &&
+                dist[minIndex] + graph[i].cost < dist[i])
+            {
+                dist[i] = dist[minIndex] + graph[i].cost;
+                parent[i] = minIndex;
+            }
+        }
+    }
+}
+
+int main()
+{
+    Graph myGraph[MAX_EDGES];
+    int currentSize = 0;
+    int s,d,c;
+    for(int i=0;i<MAX_EDGES;i++)
+    {
+        cin>>s>>d>>c;
+        addEdge(myGraph,s,d,c,currentSize);
+    }
+    
+    return 0;
+}

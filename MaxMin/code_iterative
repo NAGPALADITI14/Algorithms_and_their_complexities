@@ -1,0 +1,51 @@
+#include<iostream>
+#include<chrono>
+#include<cstdlib>
+#include<algorithm>
+using namespace std;
+using namespace std::chrono;
+
+void findMaxMin(const int arr[], int size, int &maxValue, int &minValue) {
+    maxValue = arr[0];
+    minValue = arr[0];
+
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > maxValue) {
+            maxValue = arr[i];
+        }
+        if (arr[i] < minValue) {
+            minValue = arr[i];
+        }
+    }
+}
+int* generate_numbers(int g) {
+    int *arr = new int[g];
+    for (int j = 0; j < g; j++) {
+        arr[j] = rand();
+    }
+    return arr;
+}
+int main() {
+
+    int  maxVal, minVal;
+    for (int i = 10000; i <= 90000; i += 1000) {
+        int* arr = generate_numbers(i); 
+        int target = arr[rand()%i];
+
+        auto start = high_resolution_clock::now();
+
+        for (int m = 1; m <= 10; m++) {
+           findMaxMin(arr, sizeof(arr) / sizeof(arr[0]), maxVal, minVal);
+        }
+
+        auto stop = high_resolution_clock::now();
+
+        auto duration = duration_cast<nanoseconds>(stop - start) / 10;
+
+        cout <<"(" <<i <<","<< "\t" << duration.count()<<")," << endl;
+
+        delete[] arr;  
+    }
+
+    return 0;
+}

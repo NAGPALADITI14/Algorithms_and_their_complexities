@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+void diagonal_elements(int **arr, int n)
+{
+    int i,j,sub;
+    for(sub = 2;sub<n;sub++)
+    {
+        i=0;
+        j=sub;
+        while(i<j && j<n)
+        {
+            arr[i][j] = arr[i][j - 1] + arr[i + 1][j];
+            i++;
+            j++;
+        }
+    }
+}
+
+int main()
+{
+    int n;
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    int **Arr = new int *[n];
+    for (int i = 0; i < n; ++i)
+    {
+        Arr[i] = new int[n];
+    }
+
+    int Values[5][5] = {
+        {0, 1, 5, 8, 10},
+        {0, 0, 2, 6, 9},
+        {0, 0, 0, 3, 7},
+        {0, 0, 0, 0, 4},
+        {0, 0, 0, 0, 0}};
+
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < n; ++j)
+        {
+            Arr[i][j] = (i < 5 && j < 5) ? Values[i][j] : 0;
+        }
+    }
+
+    diagonal_elements(Arr, n);
+    cout << "After applying the algorithm:" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            cout << Arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        delete[] Arr[i];
+    }
+    delete[] Arr;
+
+    return 0;
+}

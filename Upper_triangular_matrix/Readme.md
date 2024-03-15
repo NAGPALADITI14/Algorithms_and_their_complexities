@@ -32,7 +32,7 @@ function main()
 ```
 ## Output Generated
 
-<img width="182" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/8db75aea-6f5e-47ec-9399-0efaeadd7e1a">
+<img width="252" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/19850331-5e5a-490a-8095-61f146aeabf1">
 
 ## Time Complexity
 The time complexity of this algorithm is O(n^2), where n is the size of the matrix. This is because we iterate through each element of the upper diagonal of the matrix once.

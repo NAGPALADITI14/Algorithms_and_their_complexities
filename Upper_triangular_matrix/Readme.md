@@ -9,7 +9,7 @@ Given a square matrix, the task is to compute the diagonal elements of the matri
 The program defines a function `diagonal_elements` which takes a 2D integer array and its size as input. It iterates through the upper diagonal elements of the matrix, starting from the second diagonal, and computes the sum of the adjacent elements on the upper diagonal. This sum replaces the current element. The process continues until all diagonal elements are computed.
 
 ## Pseudocode
-
+```
 function diagonal_elements(arr: 2D integer array, n: size of the array)
     for sub from 2 to n - 1
         set i = 0
@@ -29,11 +29,11 @@ function main()
     Output Arr
     Free memory allocated for Arr
 
-
+```
 ## Output Generated
-
+```
 <img width="182" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/8db75aea-6f5e-47ec-9399-0efaeadd7e1a">
-
+```
 ## Time Complexity
 The time complexity of this algorithm is O(n^2), where n is the size of the matrix. This is because we iterate through each element of the upper diagonal of the matrix once.
 

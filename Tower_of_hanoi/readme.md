@@ -8,7 +8,7 @@ The Tower of Hanoi is a classic problem that involves moving a stack of disks fr
 
 ### Algorithm:
 - Define a function Tower_of_Hanoi(int n, char source, char spare, char destination) to implement the Tower of Hanoi algorithm:
-    -If n is greater than or equal to 1:
+- If n is greater than or equal to 1:
        - Move the top n-1 disks from the source rod to the spare rod using the destination rod as a spare.
        - Move the nth disk from the source rod to the destination rod.
        - Move the n-1 disks from the spare rod to the destination rod using the source rod as a spare.

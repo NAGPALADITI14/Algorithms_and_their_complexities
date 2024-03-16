@@ -13,13 +13,13 @@ Finding the maximum and minimum elements in an array is a common problem in comp
 #### 1. Linear Search
 - **Description**: Involves iterating through the array and updating the maximum and minimum values.
 
-Algorithm MaxMinIterative(arr, size, maxVal, minVal)
-Input: 
-    arr - Array of integers
-    size - Size of the array
-Output:
-    maxVal - Maximum value found in the array
-    minVal - Minimum value found in the array
+- **Algorithm**: MaxMinIterative(arr, size, maxVal, minVal)
+- Input: 
+    - arr - Array of integers
+    - size - Size of the array
+- Output:
+    - maxVal - Maximum value found in the array
+    - minVal - Minimum value found in the array
 
 1. Initialize maxVal and minVal with the first element of the array: maxVal = minVal = arr[0].
 2. Iterate through the array starting from the second element to the last:
@@ -41,14 +41,14 @@ Output:
 #### 2. Divide and Conquer
 - **Description**: Involves dividing the array into two halves and finding the maximum and minimum in each half recursively.
 
-Algorithm MaxMinDivideAndConquer(arr, start, end, maxVal, minVal)
-Input: 
-    arr - Array of integers
-    start - Starting index of the array
-    end - Ending index of the array
-Output:
-    maxVal - Maximum value found in the array
-    minVal - Minimum value found in the array
+- **Algorithm**:MaxMinDivideAndConquer(arr, start, end, maxVal, minVal)
+- Input: 
+    - arr - Array of integers
+    - start - Starting index of the array
+    - end - Ending index of the array
+- Output:
+    - maxVal - Maximum value found in the array
+    - minVal - Minimum value found in the array
 
 1. If start equals end, set maxVal and minVal to arr[start] and return.
 2. Calculate mid as (start + end) / 2.
@@ -56,8 +56,6 @@ Output:
 4. Recursively call MaxMinDivideAndConquer for the right half of the array: MaxMinDivideAndConquer(arr, mid + 1, end, maxVal2, minVal2).
 5. Set maxVal to the maximum of maxVal1 and maxVal2.
 6. Set minVal to the minimum of minVal1 and minVal2.
-
-
 
 
 -  **Time Complexity**:

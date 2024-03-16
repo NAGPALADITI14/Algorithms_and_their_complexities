@@ -11,6 +11,18 @@ Given an array of integers, the task is to sort the array in non-decreasing orde
 
 ### Method Used
 - **Randomized Quick Sort**: Randomized Quick Sort is an extension of the Quick Sort algorithm. Instead of selecting the first element as the pivot, it selects a random element as the pivot. This helps avoid worst-case scenarios and ensures better average performance.
+- **Algorithm**: Randomized Quick Sort Performance Measurement
+
+- Input: Size of array n
+- Output: Time taken to perform Randomized Quick Sort on arrays of different sizes
+
+1. Define a function generate_number(int g) to generate an array of g random numbers.
+2. Define a function random_sort(int arr[], int low, int high) to implement Randomized Quick Sort algorithm:
+    - Choose a random element as pivot from the array.
+    - Partition the array around the chosen pivot element.
+    - Recursively apply the quicksort algorithm on the subarrays before and after the pivot.
+3. Define a function swap(int *a, int *b) to swap two elements.
+
 
 ### Output Generated
 The output of the program is the time taken to sort arrays of varying sizes using the Randomized Quick Sort algorithm. The time taken is averaged over multiple iterations to provide a more accurate representation of performance.

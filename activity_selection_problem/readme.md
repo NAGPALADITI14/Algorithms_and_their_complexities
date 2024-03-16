@@ -1,35 +1,75 @@
-Activity Selection Problem Algorithm
+# Lecture Scheduling Problem
 
-Description:
+## Aim
+The aim of this project is to analyze different algorithms for solving the lecture scheduling problem and evaluate their performance in terms of time complexity and space complexity.
 
-This README introduces the Activity Selection Problem and provides a C++ implementation to solve it. The Activity Selection Problem involves selecting a maximum set of non-overlapping activities, each represented by a start and finish time, from a given set. The algorithm aims to maximize the number of activities performed.
+## Description
+The lecture scheduling problem involves scheduling a set of lectures in such a way that no two overlapping lectures are scheduled at the same time. Three different methods are implemented to solve this problem:
 
-Implementation:
+1. **Method 1: Sort by End Time:** In this method, lectures are sorted based on their end times, and then a greedy approach is used to select non-overlapping lectures.
+   
+2. **Method 2: Sort by Duration:** Here, lectures are sorted based on their duration (end time - start time), and a greedy approach is applied to select non-overlapping lectures.
+   
+3. **Method 3: Sort by Start Time:** Lectures are sorted based on their start times, and a greedy approach is employed to select non-overlapping lectures.
 
-The provided C++ implementation offers a solution to the Activity Selection Problem. It employs a greedy algorithm to select activities based on their finish times, ensuring a maximum set of non-overlapping activities.
-
-Data Structures:
-
-Input Format:   The input consists of a set of activities, each represented by a start time and finish time.
-
-Output Format:  The output is the maximum set of non-overlapping activities that can be performed.
-
-
-Time Complexity:
-The time complexity of the algorithm is O(n log n), where "n" is the number of activities. Sorting the activities based on finish times is the primary contributor to the time complexity.
+## Algorithms
+### Method 1: Sort by End Time
+1. Sort lectures by end time in ascending order.
+2. Initialize solution to 1 and i to 0.
+3. Iterate over lectures from index 1 to n-1:
+    - If the start time of the current lecture is greater than or equal to the end time of the previous lecture:
+        - Increment solution by 1.
+        - Update i to the current index.
+4. Return the value of solution as the maximum number of non-overlapping lectures.
 
 
-Graph for Time Complexity:
-A graph illustrating the time complexity, particularly the relationship between the number of activities and execution time, can be generated using the provided instructions. This graph visually depicts the efficiency of the Activity Selection algorithm for different input sizes.
+### Method 2: Sort by Duration
+1. Calculate the duration (end time - start time) for each lecture.
+2. Sort lectures by duration in ascending order.
+3. Initialize solution to 1 and i to 0.
+4. Iterate over lectures from index 1 to n-1:
+    - If the start time of the current lecture is greater than or equal to the end time of the previous lecture:
+        - Increment solution by 1.
+        - Update i to the current index.
+5. Return the value of solution as the maximum number of non-overlapping lectures.
+
+
+### Method 3: Sort by Start Time
+1. Sort lectures by start time in ascending order.
+2. Initialize solution to 1 and i to 0.
+3. Iterate over lectures from index 1 to n-1:
+    - If the start time of the current lecture is greater than or equal to the end time of the previous lecture:
+        - Increment solution by 1.
+        - Update i to the current index.
+4. Return the value of solution as the maximum number of non-overlapping lectures.
+
+
+## Output Generated
+The output of each method includes the number of lectures scheduled and the time taken to schedule them.
+
+## Time Complexity
+The time complexity of each method varies based on the sorting algorithm used and the approach for selecting non-overlapping lectures.
+
+- **Method 1:** Best case - O(n log n), Average case - O(n log n), Worst case - O(n log n)
+- **Method 2:** Best case - O(n log n), Average case - O(n log n), Worst case - O(n log n)
+- **Method 3:** Best case - O(n log n), Average case - O(n log n), Worst case - O(n log n)
+
+## Graph for Time Complexity
 
 <img width="468" alt="activity _selection_problem" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/a0b2ba40-f2ce-4f54-9a5d-c10ad6eee15f">
 
-Use Cases:
+## Space Complexity
+The space complexity of each method depends on the data structures used for sorting and storing the lectures.
 
-1) Event Scheduling:  Useful for scheduling events or tasks with specific start and finish times, ensuring maximum utilization of available time.
+- **Method 1:** Best case - O(n), Average case - O(n), Worst case - O(n)
+- **Method 2:** Best case - O(n), Average case - O(n), Worst case - O(n)
+- **Method 3:** Best case - O(n), Average case - O(n), Worst case - O(n)
 
-2) Resource Allocation:  Applicable in scenarios where resources need to be allocated to activities with defined time constraints, optimizing resource usage.
+## Use Cases
+The lecture scheduling problem has applications in various fields, including academic scheduling, conference scheduling, and event management.
 
-3) Project Management:  Valuable for scheduling tasks in project management, maximizing the number of tasks completed within a given timeframe.
 
-This README serves as a guide for understanding and utilizing the Activity Selection Problem algorithm. It provides users with information on the implementation, input/output formats, time complexity, graph representation, and use cases to facilitate effective usage of the algorithm in various scenarios.
+
+
+
+

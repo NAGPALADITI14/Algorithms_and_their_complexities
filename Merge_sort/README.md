@@ -1,38 +1,49 @@
-Description:
+# Permutation Generation Algorithm Performance Analysis
 
-The description provides an overview of the code's purpose and functionality. In this case, the code implements the Merge Sort algorithm, a divide-and-conquer approach to sorting. The algorithm divides an array into two halves, recursively sorts them, and merges them back together. This ensures a sorted order for the entire array.
+## Aim
+The aim of this program is to generate permutations of strings of varying lengths and analyze the performance of the permutation generation algorithm.
 
-Data Structures:
+## Description
 
-The primary data structure used in the code is an integer array. This array is manipulated during the sorting process. Subarrays are created during the divide phase, and the merging phase combines these subarrays back into a sorted array.
+### Problem Statement
+Given a string of characters, the task is to generate all possible permutations of the string.
 
-Output:
+### Method Used
+The algorithm used to generate permutations is based on backtracking. It iterates through each character of the string, fixes it at the current position, and recursively generates permutations for the remaining characters. After generating permutations for each level, it backtracks by swapping characters back to their original positions.
 
-The output section showcases the expected result format when running the code. It displays the array sizes and their corresponding average execution times in nanoseconds. Users can use this output to analyze the algorithm's performance for different input sizes.
-Overall, the README provides a comprehensive understanding of the Merge Sort algorithm, its implementation in C++, and how to experiment with the code to analyze its performance characteristics.
+## Algorithm Used
+Backtracking Algorithm
 
-Time Complexity:
+## Pseudocode
 
-The time complexity of Merge Sort is analyzed. It is O(n log n), where "n" represents the number of elements in the array. This complexity arises from the logarithmic nature of the divide step (log n) and the linear time complexity of the merging step (n). The O(n log n) time complexity makes Merge Sort efficient for large datasets.
+- Function permutation(str, level, n)
+- Input: 
+    - str - String to generate permutations from
+    - level - Current level in the permutation generation process
+    - n - Length of the string
+- Output:
+    - Permutations of the string
 
-Time Complexity Graph:
+1. If level equals n, return.
+2. For i from level to n - 1:
+    a. Swap str[level] with str[i].
+    b. Recursively call permutation with incremented level.
+    c. Swap str[level] with str[i] to backtrack.
+
+### Output Generated
+The output of the program is the time taken to generate permutations of strings of different lengths. The time taken is averaged over multiple iterations to provide a more accurate representation of performance.
+
+## Time Complexity
+The time complexity of generating permutations of a string of length `n` using backtracking is O(n!).
+
+## Time Complexity Graph:
 
 A graphical representation of the time complexity is provided. The graph depicts the relationship between the input size (array size) and the corresponding time taken for the algorithm to execute. The graph visually shows the logarithmic nature of the time complexity.
 
 <img width="513" alt="merge_sort" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/793ed1fd-9594-4688-a78b-f2081f554ae7">
 
 
-Use Cases:
+## Space Complexity
+The space complexity of the backtracking algorithm depends on the implementation. In this case, it is O(n), where `n` is the length of the string.
 
-This section outlines scenarios where Merge Sort is particularly useful:
-
-  1)Sorting Large Datasets: Merge Sort's efficiency with large datasets makes it suitable for scenarios where extensive          sorting is required.
-  
-  2)External Sorting in Databases: Merge Sort is commonly used in database management systems for external sorting due to        its ability to handle large amounts of data.
-  
-  3)Parallel Processing: The divide-and-conquer nature of Merge Sort allows for parallel processing, making it applicable in     parallel computing environments.
-
-Instructions:
-
-This part guides users on how to compile, run, and interpret the code. It includes steps to compile the C++ code, run the executable, and understand the output. Users are encouraged to experiment with different array sizes to observe the impact on execution times.
 

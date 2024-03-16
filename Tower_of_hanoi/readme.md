@@ -7,11 +7,11 @@ The aim of this program is to measure the performance of the Tower of Hanoi algo
 The Tower of Hanoi is a classic problem that involves moving a stack of disks from one rod to another, with the constraint that only one disk can be moved at a time and a larger disk cannot be placed on top of a smaller disk. The problem can be solved recursively.
 
 ### Algorithm:
-1. Define a function Tower_of_Hanoi(int n, char source, char spare, char destination) to implement the Tower of Hanoi algorithm:
-    1.1. If n is greater than or equal to 1:
-        1.1.1. Move the top n-1 disks from the source rod to the spare rod using the destination rod as a spare.
-        1.1.2. Move the nth disk from the source rod to the destination rod.
-        1.1.3. Move the n-1 disks from the spare rod to the destination rod using the source rod as a spare.
+- Define a function Tower_of_Hanoi(int n, char source, char spare, char destination) to implement the Tower of Hanoi algorithm:
+    -If n is greater than or equal to 1:
+       - Move the top n-1 disks from the source rod to the spare rod using the destination rod as a spare.
+       - Move the nth disk from the source rod to the destination rod.
+       - Move the n-1 disks from the spare rod to the destination rod using the source rod as a spare.
 
 
 ## Output:

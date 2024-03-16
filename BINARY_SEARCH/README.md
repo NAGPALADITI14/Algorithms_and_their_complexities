@@ -1,42 +1,44 @@
-Binary Search
+# Binary Search Algorithm
 
-Overview
-    Binary search is a powerful and efficient algorithm for finding a specific element in a sorted array. This algorithm follows the divide and conquer paradigm, reducing the search space by half in each step. This README provides a concise guide to understanding and implementing binary search.
+## Aim
+The aim of this program is to implement the binary search algorithm and analyze its time complexity for different input sizes.
 
-Algorithm:
-    Binary search works by repeatedly dividing the search interval in half. It compares the middle element of the interval to the target value and eliminates half of the remaining elements from consideration.
+## Description
 
-Initialize: Set the left and right pointers to the beginning and end of the array, respectively.
+### Problem Statement
+Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one. This program implements binary search and measures its performance for various input sizes.
 
-Iterate: While the left pointer is less than or equal to the right pointer, repeat the following steps.
+### Method Used
+The method used is the iterative implementation of the binary search algorithm. Given a sorted array and a target value, the algorithm repeatedly divides the search interval in half until the target is found or the interval is empty.
 
-Calculate Midpoint: Compute the midpoint index as mid = (left + right) / 2.
+### Algorithm
+1. Initialize low to 0 and high to size - 1.
+2. Repeat until low is less than or equal to high:
+   - Calculate mid as (low + high) / 2.
+   - If arr[mid] equals the target, return mid.
+   - If arr[mid] is greater than the target, set high to mid - 1.
+   - If arr[mid] is less than the target, set low to mid + 1.
+3. If the loop exits, return -1 indicating the target was not found.
 
-Compare: Compare the element at the midpoint with the target value.
+## Output Generated
+The output is the time taken by the binary search algorithm to find a target element in arrays of different sizes. The output is tabulated with the size of the array and the average time taken for 10 iterations.
 
-If they are equal, the search is successful, and the index of the element is found.
-If the target is less than the midpoint element, update the right pointer to mid - 1.
-If the target is greater than the midpoint element, update the left pointer to mid + 1.
-Repeat: Continue the process until the target element is found or the left pointer exceeds the right pointer.
+## Time Complexity
+- Best Case: O(1) (when the target is found at the middle of the array)
+- Average Case: O(log n)
+- Worst Case: O(log n)
 
-
-Time Complexity : 
-Binary search has a time complexity of O(log n), where n is the number of elements in the array. This efficiency makes it significantly faster than linear search algorithms, especially for large datasets.
-
-Graph for time complexity :
+## Graph for Time Complexity
 
 <img width="494" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/0c2491d3-5e84-4c6b-928b-95704a6e7850">
 
+## Space Complexity
+- Best Case: O(1)
+- Average Case: O(1)
+- Worst Case: O(1)
 
-Space Complexity :
-Binary search has a space complexity of O(1), meaning it uses a constant amount of extra space regardless of the size of the input array.
+## Use Cases
+- Searching in sorted arrays efficiently.
+- Applications where quick searches in large datasets are needed, such as databases or search engines.
 
-Usage
-Binary search is suitable for situations where the data is sorted, and quick retrieval of a specific element is required. It is commonly used in various applications, such as searching in databases, spell checking, and in algorithms like merge sort.
 
-Implementation Tips:
-Ensure that the input array is sorted before applying binary search.
-
-Take care to handle edge cases, such as empty arrays or arrays with a single element.
-
-Consider variations of binary search for specific use cases, such as binary search in rotated sorted arrays.

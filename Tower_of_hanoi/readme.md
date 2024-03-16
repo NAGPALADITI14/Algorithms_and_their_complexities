@@ -1,43 +1,34 @@
-Tower of Hanoi 
+## Tower of Hanoi Performance Measurement
 
-Overview  : 
+### Aim:
+The aim of this program is to measure the performance of the Tower of Hanoi algorithm by solving the problem for different numbers of disks and recording the time taken.
 
-The Tower of Hanoi is a classic problem in computer science and mathematics that involves moving a stack of discs from one rod to another, subject to the following constraints:
+### Description:
+The Tower of Hanoi is a classic problem that involves moving a stack of disks from one rod to another, with the constraint that only one disk can be moved at a time and a larger disk cannot be placed on top of a smaller disk. The problem can be solved recursively.
 
-1) Only one disc can be moved at a time.
-
-2) Each move consists of taking the upper disc from one of the stacks and placing it on top of another stack or on an empty rod.
-
-3) No disc may be placed on top of a smaller disc.
-
-
-Problem Statement  :
-
-Given three rods and a number of discs of different sizes, the task is to move all the discs from one rod to another rod, following the rules mentioned above.
-
-Algorithm  :
-
-The Tower of Hanoi problem can be solved using a recursive algorithm. The key insight is to break down the problem into smaller subproblems.
-
-1) Base Case: If there is only one disc, move it from the source rod to the destination rod.
-
-2) Recursive Step: Move n-1 discs from the source rod to the auxiliary rod, then move the remaining disc from the source rod to the destination rod.
-
-3) Repeat: Recursively apply the algorithm to the subproblems until all discs are moved to the destination rod.
+### Algorithm:
+1. Define a function Tower_of_Hanoi(int n, char source, char spare, char destination) to implement the Tower of Hanoi algorithm:
+    1.1. If n is greater than or equal to 1:
+        1.1.1. Move the top n-1 disks from the source rod to the spare rod using the destination rod as a spare.
+        1.1.2. Move the nth disk from the source rod to the destination rod.
+        1.1.3. Move the n-1 disks from the spare rod to the destination rod using the source rod as a spare.
 
 
-Time Complexity  :
+## Output:
+The program generates output in the form of pairs of numbers representing the number of disks and the average time taken to solve the Tower of Hanoi problem for that number of disks. This output can be used to analyze the performance of the Tower of Hanoi algorithm.
 
-The time complexity of the Tower of Hanoi algorithm is O(2^n), where n is the number of discs. This is an exponential time complexity, and the number of moves required doubles with each additional disc.
 
-<img width="497" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/c6a4d98a-722c-4217-b30c-a448abc2da3a">
 
-Usage  :
+## Time Complexity:
+- The time complexity of the Tower of Hanoi algorithm is O(2^n), where n is the number of disks.
 
-The Tower of Hanoi problem is often used to demonstrate the principles of recursion and algorithmic design. It also has applications in algorithm analysis and teaching computational thinking.
+## Graph for Time Complexity:  
 
-Implementation Tips  :
+<img width="472" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/95fd1e9d-e184-42ad-9aec-046faa2efd15">
 
-1) Ensure that the moveDisc function is implemented according to the specific requirements of the application (e.g., printing the move or updating a graphical representation).
+## Space Complexity:
+- The space complexity of the Tower of Hanoi algorithm is O(n) due to the recursive calls on the stack.
 
-2) Validate inputs to the towerOfHanoi function to avoid errors or unexpected behavior.
+## Use Cases:
+- Performance analysis of the Tower of Hanoi algorithm for different numbers of disks.
+

@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+const int N = 4; 
+
+bool isSafe(int matrix[N][N], int row, int col) {
+    
+    for (int i = 0; i < row; i++) {
+        if (matrix[i][col] == 1) {
+            return false;
+        }
+    }
+    
+    for (int i = row, j = col; i >= 0 && j >= 0; i--, j--) {
+        if (matrix[i][j] == 1) {
+            return false;
+        }
+    }
+   
+    for (int i = row, j = col; i >= 0 && j < N; i--, j++) {
+        if (matrix[i][j] == 1) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool nQueen(int matrix[N][N], int row) {
+    if (row == N) {
+        return true;
+    }
+    for (int col = 0; col < N; col++) {
+        if (isSafe(matrix, row, col)) {
+            matrix[row][col] = 1;
+            if (nQueen(matrix, row + 1)) {
+                return true;
+            }
+            matrix[row][col] = 0;
+        }
+    }
+    return false;
+}
+
+void print(int matrix[N][N]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int matrix[N][N] = {0}; 
+    if (nQueen(matrix, 0)) {
+        cout << "Solution exists." << endl;
+        print(matrix);
+    } else {
+        cout << "No solution exists." << endl;
+    }
+    return 0;
+}

@@ -1,0 +1,62 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+
+const int infinity = INT_MAX;
+
+int min_vertex(int key, int cost[6][6], int fcost[6], int n) {
+    int min_cost = infinity;
+    int r = -1;
+    for (int i = key + 1; i < n; i++) {
+        if (cost[key][i] != 0 && cost[key][i] != infinity) {
+            if (cost[key][i] + fcost[i] < min_cost) {
+                min_cost = cost[key][i] + fcost[i];
+                r = i;
+            }
+        }
+    }
+    return r;
+}
+
+void MultiStageGraph(int cost[][6], int n, int stages) {
+    int fcost[n]; 
+    int R[n]; 
+    int print[stages]; 
+
+  
+    fcost[n - 1] = 0;
+
+  
+    for (int j = n - 2; j >= 0; j--) {
+        int r = min_vertex(j, cost, fcost, n);
+        R[j] = r;
+        fcost[j] = cost[j][r] + fcost[r];
+    }
+    cout << "Path: ";
+    cout << "0 ";
+    for (int i = 0; i < n - 1; i++) {
+        cout << "-> " << R[i] << " ";
+    }
+
+    cout << "Minimum Cost: " << fcost[0] << endl;
+}
+
+int main() {
+    int n = 6;
+    int cost[6][6];
+
+    
+    cout << "Enter the cost matrix:" << endl;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << "cost of [" << i << "][" << j << "] :";
+            cin >> cost[i][j];
+            if (cost[i][j] == -1) {
+                cost[i][j] = infinity; 
+            }
+        }
+    }
+
+    MultiStageGraph(cost, n, 4);
+    return 0;
+}

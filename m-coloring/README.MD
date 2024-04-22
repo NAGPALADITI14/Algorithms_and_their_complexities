@@ -35,4 +35,5 @@ Time complexity for coloring `m` nodes:
 - Worst-case Time Complexity: O(m^n * n^2)
 
 ##OUTPUT GENERATED
+
 <img width="472" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/b037526b-a203-41b2-8eca-6b3a969488ce">

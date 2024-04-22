@@ -1,32 +1,37 @@
-# Matrix Chain Multiplication Using Dynamic Programming
+# Knapsack Problem Using Backtracking
 
 ## Description
-The algorithm aims to minimize scalar matrix multiplication by determining the optimal order of multiplying matrices. It employs dynamic programming, creating a matrix to store intermediate results and recursively computing the minimum cost.
+The Knapsack problem using backtracking involves finding the optimal combination of items to maximize the value while respecting a weight constraint. It explores different combinations recursively, making decisions at each step based on whether adding an item is feasible and improves the total value. Backtracking is employed when a dead-end is reached, optimizing the selection process for efficiency.
 
 ## Algorithm
-### Initialization:
-- Create a 2D array `m[n][n]` to store the minimum number of multiplications for matrix multiplication.
-- Create a 2D array `brac[5][5]` (fixed size for demonstration) to store optimal parentheses placement information.
 
-### Base Case:
-- Set `m[i][i] = 0` for all diagonal elements, indicating that a single matrix multiplication requires no additional multiplications.
+### Function `print(s)`:
+- Print the elements of the set.
 
-### Dynamic Programming Loop:
-- Use nested loops to fill the `m` array diagonally.
-- Iterate over different chain lengths `L` (from 2 to `n`, where `n` is the number of matrices).
-- For each chain length, iterate over all possible starting indices `i`.
-- Compute the minimum number of multiplications `m[i][j]` required to multiply matrices from index `i` to `j` using a third index `k` as a split point.
-- Update `m[i][j]` and `brac[i][j]` if a better (minimum) number of multiplications is found.
+### Function `find_max_value(s)`:
+- Find the maximum value (first element) in the set.
 
-### Optimal Parenthesization:
-- Use a recursive function `printParenthesis` to print the optimal placement of parentheses for matrix multiplication based on the information stored in the `brac` array.
+### Function `find_max_path(s, max_value, p, w)`:
+- Find the path of items that contribute to the maximum value.
+- Iterate through the set and select items that contribute to the maximum value without exceeding weight constraints.
 
-### Main Function:
-- Initialize an array `arr` with the dimensions of matrices.
-- Call the `MatrixChainOrder` function to compute the minimum number of multiplications and print the optimal parenthesization.
+### Function `merge_purge(s1, s2, W)`:
+- Merge two sets while purging elements that violate weight constraints.
+- Iterate through elements of both sets, checking weight constraints and maximizing value.
 
-## Time Complexity
-The time complexity of the Matrix Chain Multiplication algorithm using dynamic programming is as follows:
-- Best-case time complexity: O(n^3)
-- Average-case time complexity: O(n^3)
-- Worst-case time complexity: O(n^3)
+### Function `knapsackMP(n, p, w, W)`:
+- Initialize an empty set `s1` with a single element `{0, 0}`.
+- Iterate through each item:
+  - Create a new set `s2` by adding the current item to each element of `s1`.
+  - Merge `s1` and `s2` while purging elements violating weight constraints.
+  - Print the resulting set `s1`.
+  - Find the maximum value in `s1` using `find_max_value`.
+  - Find the path of items contributing to the maximum value using `find_max_path`.
+  - Print the maximum value and the selected items contributing to it.
+
+## Main Function
+- Initialize input variables (number of items `n`, values `p`, weights `w`, and knapsack capacity `W`).
+- Call `knapsackMP` with the input parameters.
+
+## OUTPUT GENERATED
+(https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/102ab3bf-20a4-4443-859d-eb40b31b8c37)

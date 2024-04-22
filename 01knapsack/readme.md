@@ -34,4 +34,4 @@ The Knapsack problem using backtracking involves finding the optimal combination
 - Call `knapsackMP` with the input parameters.
 
 ## OUTPUT GENERATED
-(https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/102ab3bf-20a4-4443-859d-eb40b31b8c37)
+<img width="472" alt="image" src="https://github.com/NAGPALADITI14/Algorithms_and_their_complexities/assets/138228231/9577f5af-a912-4220-94de-13e3cdb8aa60">

@@ -7,7 +7,7 @@
 
 ## Algorithm
 ### 1. Function `place(k, i)`
-- Inputs: `k` represents the current row being considered, and `i` represents the column to be checked for placing a queen.
+ - Inputs: `k` represents the current row being considered, and `i` represents the column to be checked for placing a queen.
 - Output: Returns true if a queen can be placed at position (k, i) without conflicting with previously placed queens, false otherwise.
 - Iterate over all previously placed queens (from 1 to k-1) and check if the current position conflicts with any of them:
   - If the current position is in the same column as a previous queen (`x[j] == i`), or
